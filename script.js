@@ -70,3 +70,15 @@ function validatemessage() {
 }
 
 
+function validateForm() {
+    if (!validateName() || !validatephone() || !validatemessage() || !validateemail()) {
+        submitError.style.display="block";
+        submitError.innerHTML="Please fix error to Submit";
+
+        setTimeout(() => {
+            submitError.style.display="none";
+        }, 3000);
+        return false;
+    }
+    
+}

@@ -39,3 +39,34 @@ function validatephone() {
     return true;
 }
 
+function validateemail() {
+    let email = document.getElementById("email").value;
+    if (email.length == 0) {
+        emailError.innerHTML = "Email is Required";
+        return false;
+    }
+    if (!email.match(/^[A-Za-z\._\-[0-9]*[@][A-Za-z]*[\.][a-z]{2,4}$/)) {
+        emailError.innerHTML = "Invalid Email";
+        return false;
+    }
+
+    emailError.innerHTML = "Valid";
+    return true;
+}
+
+function validatemessage() {
+    let message = document.getElementById("message").value;
+
+    let required = 30;
+    let left = required - message.length;
+    if (left > 0) {
+        messageError.innerHTML =  left + "More Character is Required";
+        return false;
+    }
+
+
+    messageError.innerHTML = "Valid";
+    return true;
+}
+
+
